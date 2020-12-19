@@ -1,0 +1,167 @@
+.navbar-brand {
+    color: #28a745;
+    ;
+    font-size: 1.8rem;
+}
+
+.navbar-brand:hover {
+    color: rgba(51, 255, 0, 0.24);
+}
+
+.nav .nav-item a {
+    color: #1e7e34;
+    text-transform: uppercase;
+}
+
+.nav .nav-item a:hover {
+    color: rgba(51, 255, 0, 0.24);
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    color:#28a745;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+.btn-outline-secondary {
+    background-color: transparent !important;
+    border-color: #28a745 !important;
+    color: #1e7e34 !important;
+    border-radius: 0;
+    position: relative;
+}
+
+.btn-outline-secondary a {
+    color: #f8f9fa;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.btn-outline-secondary:before {
+    content: "";
+    position: absolute;
+    background-color: rgba(174, 240, 179, 0.651);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index: -1;
+    transition: 0.5s;
+    border-radius: 50rem!important;
+}
+
+.btn-outline-secondary:hover:before {
+    width: 100%;
+}
+
+.btn-secondary {
+    background: #1e7e34 !important;
+    border-radius: 0;
+    border-color: #28a745 !important;
+}
+
+.btn-secondary :hover {
+    color: #28a745 !important;
+}
+
+.btn-primary {
+    background: #28a745 !important;
+    color: white;
+    border-radius: 0;
+    border-color: #28a745 !important;
+}
+
+.btn-primary:hover {
+    background: #8e41f3;
+    color: white;
+}
+
+.nav1 {
+    background-color: white;
+    border-bottom: 1px solid transparent;
+}
+
+.text1 {
+    color: rgb(30, 126, 52);
+}
+
+.content-wrapper {
+    min-height: 70vh;
+}
+
+.card1 {
+    margin-left: 250px;
+    width: 100%;
+    margin-top: 25px;
+    position: sticky;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-primary {
+    color: #2b42e2;
+}
+
+
+/* [class*="row"] {
+	margin-bottom: 1em;
+  justify-content: center;
+}
+
+[class*="col-"] {
+	background: #efefef;
+	border: 1px solid #ddd;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+} */
+
+.card-type {
+    width: 80%;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.btn-sm {
+    background: white;
+    color: black;
+    border: 1px solid #eee;
+    font-weight: 700;
+    border-radius: 3px;
+    min-width: 130px;
+}
+
+.btn-sm:hover {
+    background: #eee;
+    color: white;
+}
+
+
+/* .btn-sm:before{
+    content: "";
+    position: absolute;
+    background-color: grey;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    /* z-index: -1; */
+
+
+/* transition: 0.5s;
+} */
+

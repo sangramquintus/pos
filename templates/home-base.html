@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+{% block html %}
+    <html lang="en">
+    {% block head %}
+        <head>
+            <meta charset="UTF-8"/>
+            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+            <meta name="description" content="{{ website_settings.meta_data }}">
+            <meta name="keywords" content="{{ website_settings.keywords }}">
+            <title>Power Of Stock</title>
+
+                <link
+                        href="{% static 'home/images/favicon.png' %}"
+                        rel="icon"
+                        sizes="72x72"
+                        type="image/png"
+                />
+
+
+            <link
+                    href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap&subset=cyrillic,greek"
+                    rel="stylesheet"
+            />
+            <link
+                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+                    rel="stylesheet"
+            />
+
+
+            <link href="{% static 'home/css/bootstrap.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'home/css/font-awesome.min.css' %}" rel="stylesheet"/>
+
+            <link href="{% static 'home/css/all.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'home/css/prism.css' %}" rel="stylesheet"/>
+            <link href="{% static 'home/css/jqvmap.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'home/css/aos.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/lib/animate/animate.min.css' %}" rel="stylesheet"/>
+
+            <link href="{% static 'home/css/animate.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'home/css/style.css' %}" rel="stylesheet"/>
+            {% block extra_css %}{% endblock %}
+        </head>
+    {% endblock %} {% block body %}
+        <body
+                class="{% block body_class %}{% endblock %}"
+                {% block body_attributes %}{% endblock %}
+        >
+
+
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+
+        <div class="page-content" role="main">
+            <div id="main-wrapper">
+                {% block header %}
+                    {% include "home/includes/header.html" %}
+                {% endblock %}
+                <main>
+
+                    <div class="page-wrapper">
+                        <div class="wrapper">
+
+                            {% block content %}{% endblock %}
+                        </div>
+
+                        {% block modal %}{% endblock %}
+
+                        {% block message %}{% endblock %}
+                        {% block footer %}
+                        {% endblock %}
+                    </div>
+                </main>
+            </div>
+        </div>
+
+
+        <script src="{% static 'home/js/jquery.min.js' %}"></script>
+        <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'home/js/popper.min.js' %}"></script>
+        <script src="{% static 'home/js/countUp.min.js' %}"></script>
+        <script src="{% static 'home/js/jquery.countdown.min.js' %}"></script>
+        <script src="{% static 'home/js/jquery.vmap.min.js' %}"></script>
+        <script src="{% static 'home/js/jquery.vmap.world.js' %}"></script>
+        <script src="{% static 'home/js/chartist.min.js' %}"></script>
+        <script src="{% static 'home/js/chartist-plugin-tooltip.min.js' %}"></script>
+        <script src="{% static 'home/js/headroom.min.js' %}"></script>
+        <script src="{% static 'home/js/smooth-scroll.polyfills.min.js' %}"></script>
+        <script src="{% static 'home/lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'home/lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'home/lib/wow/smoothScroll.js' %}"></script>
+        <script src="{% static 'home/js/prism.js' %}"></script>
+        <script src="{% static 'home/js/main.js' %}"></script>
+        <script src="{% static 'home/js/aos.js' %}"></script>
+
+        <script>
+            AOS.init();
+        </script>
+
+        {% block extra_js %}{% endblock %}
+        </body>
+
+    {% endblock %}
+    </html>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<header class="header-global">
+    <nav class="navbar navbar-expand-lg fixed-top nav1">
+        <div class="container">
+            <a class="navbar-brand" href="#">Power Of Stocks</a>
+            <button class="navbar-toggler d-lg-none " type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Features </a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Login</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </nav>
+</header>

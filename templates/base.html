@@ -1,0 +1,163 @@
+{% load i18n %}
+<!DOCTYPE html>
+{% load static %}
+{% block html %}
+    <html lang="en">
+    {% block head %}
+        <head>
+            <meta charset="UTF-8"/>
+            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+            <meta name="description" content="{{ website_settings.meta_data }}">
+            <meta name="keywords" content="{{ website_settings.keywords }}">
+            <title>{{ website_settings.name }}-{% block page_title %}{% endblock %}</title>
+
+                <link
+                        href="{% static 'home/images/favicon-16x16(1).png' %}"
+                        rel="icon"
+                        sizes="72x72"
+                        type="image/png"
+                />
+
+            <link
+                    href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap&subset=cyrillic,greek"
+                    rel="stylesheet"
+            />
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+            <link href="{% static 'dashboard/css/bootstrap.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/font-awesome.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/animation.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/lib/animate/animate.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/asColorPicker.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/fullcalendar.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/calendar.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/responsive.bootstrap4.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/fontawesome-all.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/jquery.gritter.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/jquery.minicolors.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/jquery.steps.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/magnific-popup.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/materialdesignicons.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/multicheck.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/perfect-scrollbar.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/quill.core.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/quill.snow.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/select2.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/steps.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/themify-icons.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/toastr.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/weather-icons.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/weather-icons.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/float-chart.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/style.min.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/custom.css' %}" rel="stylesheet"/>
+
+
+            {% block extra_css %}{% endblock %}
+        </head>
+    {% endblock %} {% block body %}
+        <body
+                class="{% block body_class %}{% endblock %}"
+                {% block body_attributes %}{% endblock %}
+        >
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <div class="page-content" role="main">
+            <div id="main-wrapper">
+                {% include "dashboard/includes/header.html" %}
+                {% include "dashboard/includes/sidebar.html" %}
+                <div class="page-wrapper">
+                    {% block content %}{% endblock %}
+                    {% block footer %}
+                        {% include "dashboard/includes/footer.html" %}
+                    {% endblock %}
+
+                </div>
+
+                {% block modal %}{% endblock %}
+
+                {% block message %}{% endblock %}
+
+            </div>
+        </div>
+        </div>
+
+
+        <script src="{% static 'dashboard/js/jquery.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/popper.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+
+        <script src="{% static 'dashboard/js/perfect-scrollbar.jquery.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/sparkline.js' %}"></script>
+        <script src="{% static 'dashboard/js/waves.js' %}"></script>
+        <script src="{% static 'dashboard/js/sidebarmenu.js' %}"></script>
+        <script src="{% static 'dashboard/js/custom.min.js' %}"></script>
+        <script src="{% static 'dashboard/lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'dashboard/lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'dashboard/lib/wow/smoothScroll.js' %}"></script>
+
+        <script src="{% static 'dashboard/js/excanvas.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.pie.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.time.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.time.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.stack.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.crosshair.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.flot.tooltip.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/moment.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/chart-page-init.js' %}"></script>
+        <script src="{% static 'dashboard/js/app-style-switcher.js' %}"></script>
+        <script src="{% static 'dashboard/js/bootstrap-datepicker.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/datatable-checkbox-init.js' %}"></script>
+        <script src="{% static 'dashboard/js/datatables.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/dataTables.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/responsive.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.charts-sparkline.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery-asColor.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery-asGradient.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery-asColorPicker.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.minicolors.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.multicheck.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/toastr.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/select2.full.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/select2.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/toastr.js' %}"></script>
+        <script src="{% static 'dashboard/js/toastr.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/jquery.inputmask.bundle.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/quill.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/mask.init.js' %}"></script>
+        <script src="{% static 'dashboard/js/meg.init.js' %}"></script>
+        <script src="{% static 'dashboard/js/cal-init.js' %}"></script>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#zero_config').DataTable();
+            });
+        </script>
+
+        {% block extra_js %}{% endblock %}
+        </body>
+
+    {% endblock %}
+    </html>
+
+{% endblock %}

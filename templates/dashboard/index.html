@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+    Dashboard
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-lg-5 py-5 pl-5">
+                <!-- <img src="img/banner1.jpg" alt="" class=" animated zoomIn img-fluid"> -->
+                <div class="card card-type">
+                    <div class="card-block">
+                        <h4 class="card-title mb-5 text-center">Login With Your Broker</h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                <button class="btn btn-sm btn-default mb-1 mt-1 p-2"><img
+                                        src="{% static 'dashboard/img/zerodha1.png' %}"
+                                        alt="zerodha" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://kite.zerodha.com/connect/login?api_key=uf8cguv719djhxfc&sess_id=1Jg8TzG8v7PYUtqddlm0vFJR9nvd005N">Zerodha</a>
+                                </button>
+                                <button class="btn btn-sm btn-default  mb-1 mt-1  p-2 "><img
+                                        src="{% static 'dashboard/img/5paisa.png' %}"
+                                        alt="5paisa" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://www.5paisa.com/vlogin-page?vid=snsbl">5Paisa</a>
+                                </button>
+                                <button class="btn btn-sm  btn-default mb-1 mt-1  p-2"><img
+                                        src="{% static 'dashboard/img/alicblue.png' %}"
+                                        alt="aliceblue" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://ant.aliceblueonline.com/oauth/login?login_challenge=a4b1392f82054475a9c6b1b59868cf1d">Alice
+                                    Blue</a>
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-sm btn-default   mb-1 mt-1  p-2"><img
+                                        src="{% static 'dashboard/img/motilal.png' %}"
+                                        alt="motilal" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://prd.motilaloswal.com/moslsensibull/login.aspx">Motilal Oswal</a>
+                                </button>
+                                <button class="btn btn-sm btn-default  mb-1 mt-1  p-2"><img
+                                        src="{% static 'dashboard/img/ICICI.png' %}"
+                                        alt="icici" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://api.icicidirect.com/apiuser/tradelogin">ICICI Direct</a>
+                                </button>
+                                <button class="btn btn-sm btn-default  mb-1 mt-1  p-2"><img
+                                        src="{% static 'dashboard/img/iifl.png' %}"
+                                        alt="iifl" class="img1"
+                                        style="height:20px;margin-right:10px;"><a
+                                        href="https://ttweb.indiainfoline.com/Trade/Login.aspx?sensibullpath=NA&sensibullparams=NA">IIFL</a>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="w-100">
+                        <div class="container">
+                            <p class="para1" style="font-size:12px;">Don't Have a Broker Account ? <span><a
+                                    href="https://web.sensibull.com/open-new-account?source=LOGIN_SCREEN">Open Now</a></span>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 my-auto">
+                <div class="row">
+                    <div class="home-content offset-lg-1 col-lg-10 overflow-hidden">
+                        <h3 class="animated slideInRight delay-1s pb-3">WELCOME Power Of Stocks</h3>
+                        <p class=" animated slideInLeft delay-2s pb-3">Trade simple Option Strategies which come with
+                            limited losses. Protect your capital and enjoy peace of mind</p>
+                        <button class="btn btn-lg btn-primary animated fadeIn delay-1s rounded-pill">Download App
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

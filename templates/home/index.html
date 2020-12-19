@@ -1,0 +1,87 @@
+{% extends "home-base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style>
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="home container mb-5" id="home">
+        <div class="row mt-5">
+            <div class="col-lg-6 mt-5 py-5 pl-5">
+                <img src="{% static 'home/img/banner2.jpg' %}" alt="" class=" animated zoomIn img-fluid">
+            </div>
+            <div class="col-lg-6 my-auto">
+                <div class="row">
+                    <div class="home-content offset-lg-1 col-lg-10 overflow-hidden">
+                        <h3 class="animated slideInLeft delay-1s pb-3">Super Simple Options Tradding</h3>
+                        <p class=" animated slideInLeft delay-2s pb-3">Trade simple Option Strategies which come with
+                            limited losses. Protect your capital and enjoy peace of mind</p>
+                        <button class="btn btn-lg btn-outline-secondary animated fadeIn delay-1s rounded-pill">Explore
+                            For Free
+                        </button>
+                        <button class="btn btn-lg btn-secondary animated fadeIn delay-1s rounded-pill"><a href="#"
+                                                                                                          style="color: white;"><i
+                                class="fa fa-play"></i>Download App
+                        </a></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- banner end -->
+    <div class="container-fluid " id="features">
+        <div class="container ">
+            <section class="my-5 ">
+                <div class="container ">
+                    <h1 class="text-center text-capitalize font-weight-bold  p-5 mb-5 mt-2"><span class="text1"> Provided Features</span>
+                    </h1>
+
+                    <div class="row mb-5 mt-4">
+                        <div class="col-lg-4 col-md-6 col-12 ">
+                            <img src="{% static 'home/img/f1.jpg' %}" alt="Banking" class="rounded-circle mb-5 img-fluid">
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-12 ">
+                            <h2 class=" text-center p-1 " style="color: #28a745;">Lorem Credit Card </h2>
+                            <p class="py-5 ">Would entirely digitalise the back office processing tasks, eliminating
+                                complexity in the process thus enabling durability in the firm’s successful trade
+                                transactions.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-5 ">
+
+                        <div class="col-lg-8 col-md-6 col-12 ">
+                            <h2 class=" text-center p-1  " style="color: #28a745;">StockMarket Card</h2>
+                            <p class="pt-5 ">Launches sharia compliant program, including multiple operational services
+                                and interrelate islamic and convention banking services
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 ">
+                            <img src="{% static 'home/img/sf4.png' %}" alt="Islamic Banking" class="rounded-circle mb-5 img-fluid">
+                        </div>
+                    </div>
+                    <div class="row mb-5 ">
+                        <div class="col-lg-4 col-md-6 col-12 ">
+                            <img src="{% static 'home/img/f1.jpg' %}" alt=" Corporate banking" class="rounded-circle mb-5 img-fluid">
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-12 ">
+                            <h2 class=" text-center p-1 " style="color: #28a745;">Corporate Banking Services</h2>
+                            <p class="pt-5 ">Favours the banking system with inclusive solutions for issues regarding
+                                the bank’s requirements based on loans, deposits, trade, payment and much more.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}
