@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from kiteconnect import KiteConnect
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -127,3 +129,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+api_secret = "gqa5j4nutp7yhssso4fgnz6d6r8a09c4"
+api_key = "cvc1epobohj5n77e"
+kite = KiteConnect(api_key, api_secret)
+token_cache = dict()

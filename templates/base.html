@@ -11,12 +11,12 @@
             <meta name="keywords" content="{{ website_settings.keywords }}">
             <title>{{ website_settings.name }}-{% block page_title %}{% endblock %}</title>
 
-                <link
-                        href="{% static 'home/images/favicon-16x16(1).png' %}"
-                        rel="icon"
-                        sizes="72x72"
-                        type="image/png"
-                />
+            <link
+                    href="{% static 'home/images/favicon-16x16(1).png' %}"
+                    rel="icon"
+                    sizes="72x72"
+                    type="image/png"
+            />
 
             <link
                     href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap&subset=cyrillic,greek"
@@ -53,6 +53,7 @@
             <link href="{% static 'dashboard/css/style.min.css' %}" rel="stylesheet"/>
             <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet"/>
             <link href="{% static 'dashboard/css/custom.css' %}" rel="stylesheet"/>
+            <link href="{% static 'dashboard/css/zerodha.css' %}" rel="stylesheet"/>
 
 
             {% block extra_css %}{% endblock %}

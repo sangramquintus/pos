@@ -14,7 +14,7 @@ from whitenoise import WhiteNoise
 
 from power_stock.settings import MEDIA_ROOT, STATIC_ROOT
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pos.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'power_stock.settings')
 
 application = get_wsgi_application()
 application = WhiteNoise(application, root=STATIC_ROOT)
