@@ -5,3 +5,4 @@ pytz==2020.4
 sqlparse==0.4.1
 whitenoise==5.2.0
 wincertstore==0.2
+kiteconnect==3.9.0
