@@ -1,9 +1,12 @@
 import json
-
+import logging
+import json
 from django.shortcuts import render, redirect
 from datetime import datetime
-# Create your views here.
 from power_stock.settings import kite, api_secret, token_cache
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
 
 
 def default(o):
@@ -25,44 +28,56 @@ def logout(request):
 
 def place_order():
     try:
-        order_id = kite.place_order(tradingsymbol="YESBANK", variety=kite.VARIETY_REGULAR,
-                                    exchange=kite.EXCHANGE_NSE,
-                                    transaction_type=kite.TRANSACTION_TYPE_BUY,
-                                    quantity=3,
-                                    order_type=kite.ORDER_TYPE_MARKET,
-                                    product=kite.PRODUCT_CNC)
-
-        print("Order placed. ID is: {}".format(order_id))
+        try:
+            order_id = kite.place_order(tradingsymbol="ABCAPITAL", variety=kite.VARIETY_REGULAR,
+                                        exchange=kite.EXCHANGE_NSE,
+                                        transaction_type=kite.TRANSACTION_TYPE_BUY,
+                                        quantity=1,
+                                        order_type=kite.ORDER_TYPE_MARKET,
+                                        product=kite.PRODUCT_CNC)
+            return order_id
+        except Exception as e:
+            logger.warning("Order placement failed: {}".format(e))
     except Exception as e:
-        print("Order placement failed: {}".format(e))
+        logger.error(e.__cause__)
+        logger.error(e)
+        return HttpResponse({"message": e.__cause__}, status=500)
 
 
 def kite_login(request):
-    token = token_cache.get("request_token", None)
-    if token:
-        start_time = datetime.now()
-        print(start_time)
-        # instruments = kite.instruments()[:5]
-        place_order()
-        orders = kite.orders()
-        order_data = json.dumps(orders, indent=4, sort_keys=True, default=str)
-        print(order_data)
-        end_time = datetime.now()
-        print(end_time)
-        return render(request, 'home/zerodha.html', {"orders": orders})
-
-    return redirect(kite.login_url())
+    try:
+        token = token_cache.get("request_token", None)
+        if token:
+            start_time = datetime.now()
+            order_id = place_order()
+            orders = kite.orders()
+            for order in orders:
+                if order_id == order['order_id']:
+                    order_time = order['order_timestamp']
+                    diff = order_time - start_time
+                    logger.info("Time Difference is: {}".format(str(diff)))
+            return render(request, 'home/zerodha.html', {"orders": orders})
+        return redirect(kite.login_url())
+    except Exception as e:
+        logger.error(e.__cause__)
+        logger.error(e)
+        return HttpResponse({"message": e.__cause__}, status=500)
 
 
 def login_redirect(request):
-    login_status = request.GET.get("status")
-    if login_status == 'success':
-        request_token = request.GET.get("request_token")
-        token_cache['request_token'] = request_token
-        data = kite.generate_session(request_token, api_secret=api_secret)
-        kite.set_access_token(data["access_token"])
-        # Fetch all orders
-        orders = kite.orders()
-        # store in DB
-        # hit kite api
-    return render(request, 'home/zerodha.html', {"orders": orders})
+    try:
+        login_status = request.GET.get("status")
+        if login_status == 'success':
+            request_token = request.GET.get("request_token")
+            token_cache['request_token'] = request_token
+            data = kite.generate_session(request_token, api_secret=api_secret)
+            kite.set_access_token(data["access_token"])
+            # Fetch all orders
+            orders = kite.orders()
+            # store in DB
+            # hit kite api
+        return render(request, 'home/zerodha.html', {"orders": orders})
+    except Exception as e:
+        logger.error(e.__cause__)
+        logger.error(e)
+        return HttpResponse({"message": e.__cause__}, status=500)
