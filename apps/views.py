@@ -29,7 +29,7 @@ def logout(request):
 def place_order():
     try:
         try:
-            order_id = kite.place_order(tradingsymbol="ABCAPITAL", variety=kite.VARIETY_REGULAR,
+            order_id = kite.place_order(tradingsymbol="BERGEPAINT", variety=kite.VARIETY_REGULAR,
                                         exchange=kite.EXCHANGE_NSE,
                                         transaction_type=kite.TRANSACTION_TYPE_BUY,
                                         quantity=1,
