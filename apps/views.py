@@ -55,6 +55,7 @@ def kite_login(request):
                 if order_id == order['order_id']:
                     order_time = order['order_timestamp']
                     diff = order_time - start_time
+                    logger.info("start_time : {0},Order_time : {1}".format(str(start_time),str(order_time)))
                     logger.info("Time Difference is: {}".format(str(diff)))
             return render(request, 'home/zerodha.html', {"orders": orders})
         return redirect(kite.login_url())
