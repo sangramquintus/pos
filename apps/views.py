@@ -71,13 +71,13 @@ def kite_login(request):
         return HttpResponse({"message": e.__cause__}, status=500)
 
 
-# def position(request):
-#     token = token_cache.get("request_token", None)
-#     if token:
-#         pnl = kite.positions()['net']
-#         p_l = pnl['pnl']
-#         print(p_l)
-#         return render(request, 'home/Zerodha.html', {"pnl": pnl})
+def position(request):
+    token = token_cache.get("request_token", None)
+    if token:
+        pnl = kite.positions()['net']
+        p_l = pnl['pnl']
+        print(p_l)
+        return render(request, 'home/Zerodha.html', {"pnl": pnl})
 
 
 def login_redirect(request):
