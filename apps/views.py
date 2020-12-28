@@ -53,7 +53,7 @@ def kite_login(request):
         logger.info("Kite Existing Token: {0}".format(token))
         if token:
             start_time = datetime.now()
-            name = request.GET.get('name')
+            name = request.GET.get('trading_symbol')
             logger.info("symbol name:{0}".format(name))
             if name:
                 order_id = place_order(name)

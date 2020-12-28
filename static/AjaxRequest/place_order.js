@@ -25,7 +25,7 @@ $('#saveItems').click(function () {
         status = false;
     }
 
-    window.open("/kite_login/?trading_symbol='name'");
+    window.open(`/kite_login/?trading_symbol=${name}`);
 
 });
 
