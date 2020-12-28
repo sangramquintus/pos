@@ -10739,7 +10739,8 @@ html {
 }
 
 a {
-    color: #119a09;
+      /*color: #f8f9fa;*/
+      color: #ccc;
 }
 
 a:focus,
@@ -11846,7 +11847,7 @@ html body .waves-notransition {
     color: #fff
 }
 .btn-default {
-    background-color: #2255a4
+    background-color: #28a745;
 }
 .btn-facebook {
     color: #fff;
