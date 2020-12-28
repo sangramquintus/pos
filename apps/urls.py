@@ -9,5 +9,5 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('login_redirect/', login_redirect, name="login_redirect"),
     path('kite_login/', kite_login, name="kite_login"),
-    path('kite_position/', position, name="position"),
+    path('kite_position/', position, name="kite_position"),
 ]
