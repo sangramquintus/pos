@@ -50,11 +50,14 @@ def place_order(name):
 def kite_login(request):
     try:
         token = token_cache.get("request_token", None)
+        logger.info("Kite Existing Token: {0}".format(token))
         if token:
             start_time = datetime.now()
-            name = request.GET.get('name')
+            name = request.GET.get('trading_symbol')
+            logger.info("symbol name:{0}".format(name))
             if name:
                 order_id = place_order(name)
+                logger.info("order placed with id:{0}".format(order_id))
                 orders = kite.orders()
                 for order in orders:
                     if order_id == order['order_id']:
@@ -70,7 +73,7 @@ def kite_login(request):
 
 
 def position(request):
-        position = kite.positions()
+        position = kite.positions()['net']
         logger.info("position is:{}".format(position))
         return render(request, 'home/position.html', {"positions":position})
 
