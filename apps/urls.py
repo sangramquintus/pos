@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.views import index, dashboard, logout, login_redirect, kite_login,position,order_place
+from apps.views import index, dashboard, logout, login_redirect, kite_login,position,order_place,holding
 
 urlpatterns = [
     path('', index, name='index'),
@@ -10,4 +10,6 @@ urlpatterns = [
     path('login_redirect/', login_redirect, name="login_redirect"),
     path('kite_login/', kite_login, name="kite_login"),
     path('kite_position/', position, name="kite_position"),
+    path('kite_holding/', holding, name="kite_holding"),
+
 ]

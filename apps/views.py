@@ -17,8 +17,9 @@ def default(o):
 def index(request):
     return render(request, "home/index.html")
 
+
 def order_place(request):
-    return render(request,'home/place_order.html')
+    return render(request, 'home/place_order.html')
 
 
 def dashboard(request):
@@ -73,9 +74,16 @@ def kite_login(request):
 
 
 def position(request):
-        position = kite.positions()['net']
-        logger.info("position is:{}".format(position))
-        return render(request, 'home/position.html', {"positions":position})
+    position = kite.positions()['net']
+    logger.info("position is:{}".format(position))
+    return render(request, 'home/position.html', {"positions": position})
+
+
+
+def holding(request):
+    holding = kite.holdings()
+    logger.info("Holding is:{}".format(holding))
+    return render(request, 'home/holding.html', {"holdings": holding})
 
 
 def login_redirect(request):
