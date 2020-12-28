@@ -74,11 +74,15 @@ def kite_login(request):
 
 def position(request):
     token = token_cache.get("request_token", None)
+    logger.info("Existing token is :{}".format(token))
     if token:
+        position = kite.positions()
+        logger.info("position is:{}".format(position))
         pnl = kite.positions()['net']
+        logger.info("pnl is:{}".format(pnl))
         p_l = pnl['pnl']
         print(p_l)
-        return render(request, 'home/Zerodha.html', {"pnl": pnl})
+        return render(request, 'home/position.html', {"pnl": pnl,"positions":position})
 
 
 def login_redirect(request):
